@@ -1,0 +1,120 @@
+/* Variables */
+/* =============== */
+
+
+// Greys
+// -------------------------
+$black:                 #000000 !default;
+$greyDarker:            #333333 !default;
+$greyDark:              #858585 !default;
+$grey:                  #CECECE !default;
+$greyLight:             #DADADA !default;
+$greyLighter:           #F4F4F4 !default;
+$white:                 #FFFFFF !default;
+
+
+// Accent colors
+// -------------------------
+$red:					#FF9371 !default;	// Red
+$yellow:				#FFF371 !default;	// Yellow
+$yellowLight:			lighten($yellow, 20%) !default;	// Light Yellow
+$green:					#71FF99 !default;	// Green
+$turquoise:				#00A8A8 !default;	// Turquoise
+
+$blue:                  #0b85a3 !default;	// Main blue color
+$blueDark:              #156980 !default;
+$gold:					#daaa26 !default;	// Main golden yellow
+
+$tan:					#f9f8f2 !default;	// Background tan
+$shade:					rgba(0,0,0,.1) !default;	// A shade darker
+
+
+// Links
+// -------------------------
+$linkColor:             $blueDark !default;
+$linkColorHover:        lighten($linkColor, 10%) !default;
+
+
+
+
+// Scaffolding
+// -------------------------
+$bodyBackground:        $white !default;
+$textColor:             $greyDark !default;
+
+
+// Links
+// -------------------------
+$linkColor:             $green !default;
+$linkColorHover:        lighten($linkColor, 10%) !default;
+
+
+// Typography
+// -------------------------
+$sansFontFamily:        'Open Sans', "open_sansregular", "Helvetica Neue", Arial, sans-serif !default;
+$serifFontFamily:       Georgia, "Times New Roman", Times, serif !default;
+$monoFontFamily:        Monaco, Menlo, Consolas, "Courier New", monospace !default;
+
+$baseFontSize:          14px !default;
+$baseFontFamily:        $sansFontFamily !default;
+$baseLineHeight:        1.45 !default;
+$altFontFamily:         $serifFontFamily !default;
+
+$headingsFontFamily:    inherit !default; // empty to use BS default, $baseFontFamily
+$headingsFontWeight:    normal !default;    // instead of browser default, bold
+$headingsColor:         inherit !default; // empty to use BS default, $textColor
+
+
+// Buttons
+// -------------------------
+//$btnBackground:                     $white !default;
+$btnBackgroundHighlight:            darken($white, 10%) !default;
+//$btnBorder:                         #bbb !default;
+
+$btnPrimaryBackground:              $linkColor !default;
+$btnPrimaryBackgroundHighlight:     adjust-hue($btnPrimaryBackground, 20%) !default;
+
+
+// Forms
+// -------------------------
+$inputBackground:               $white !default;
+$inputBorder:                   #ccc !default;
+$inputDisabledBackground:       $greyLighter !default;
+$formActionsBackground:         #f5f5f5 !default;
+$inputHeight:                   $baseLineHeight + 10px; // base line-height + 8px vertical padding + 2px top/bottom border
+
+
+
+// Input placeholder text color
+// -------------------------
+$placeholderText:         $greyLight !default;
+
+
+// Hr border color
+// -------------------------
+$hrBorder:                $greyLighter !default;
+
+
+// Horizontal forms & lists
+// -------------------------
+$horizontalComponentOffset:       180px;
+
+
+// Form states and alerts
+// -------------------------
+$warningText:             #c09853 !default;
+$warningBackground:       #fcf8e3 !default;  // RGB 252,248,227
+$warningBorder:           darken(adjust-hue($warningBackground, -10), 3%) !default;
+
+$errorText:               #b94a48 !default;
+$errorBackground:         #f2dede !default;
+$errorBorder:             darken(adjust-hue($errorBackground, -10), 3%) !default;
+
+$successText:             #468847 !default;
+$successBackground:       #dff0d8 !default;
+$successBorder:           darken(adjust-hue($successBackground, -10), 5%) !default;
+
+$infoText:                #3a87ad !default;
+$infoBackground:          #d9edf7 !default;
+$infoBorder:              darken(adjust-hue($infoBackground, -10), 7%) !default;
+

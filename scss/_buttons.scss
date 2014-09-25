@@ -1,0 +1,159 @@
+/* #Buttons
+================================================== */
+
+/* Base styles
+// -------------------------------------------------- */
+
+/* Core */
+.btn {
+	display: inline-block;
+	position:relative;
+	padding:7px 11px;
+	margin-bottom:.5em;
+	color:$textColor;
+	line-height:$baseLineHeight;
+	font-size:13px;
+  	font-weight:bold;
+  	text-decoration:none;
+	text-align:center;
+	cursor:pointer;
+	@include buttonBackground(#F4F4F4, #E6E6E6, $textColor, 0);
+	//border:1px solid #E6E6E6;
+	//border-bottom-color:$greyLight;
+	@include border-radius(2px);
+	@include box-shadow(inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05));
+}
+
+a.btn { color:#333; }
+
+/* Active state */
+.btn.active,
+.btn:active { color: rgba(0,0,0,.5); outline: 0; background-image: none; background-color:#ccc; top:1px; 
+	-webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,.4), 0 1px 2px rgba(255,255,255,.05);
+	-moz-box-shadow: inset 0 1px 3px rgba(0,0,0,.4), 0 1px 2px rgba(255,255,255,.05);
+	box-shadow: inset 0 1px 3px rgba(0,0,0,.4), 0 1px 2px rgba(255,255,255,.05);
+}
+
+/* Disabled state */
+.btn.disabled,
+.btn[disabled] { cursor: default; background-image: none; background-color:#ccc; color:rgba(0,0,0,.5);
+	-webkit-box-shadow:none;
+	-moz-box-shadow:none;
+	box-shadow:none;
+}
+
+
+/* Button Sizes
+// -------------------------------------------------- */
+
+/* Large */
+.btn-large { padding:9px 20px !important; font-size:16px !important; line-height: normal; font-weight:normal; }
+
+/* Small */
+.btn-small { padding:5px 9px !important; font-size:10px !important; line-height:11px !important; }
+
+/* Full width buttons */
+.btn.full-width { width:100%; padding-left:0 !important; padding-right:0 !important; text-align:center; }
+
+
+/* Alternate buttons
+// -------------------------------------------------- */
+
+/* Set text color
+// ------------------------- */
+.btn-primary,
+.btn-primary:hover { color:#FFF !important; }
+
+.btn-secondary,
+.btn-secondary:hover { color:#FFF !important; }
+
+/* Provide *some* extra contrast for those who can get it */
+.btn-primary.active, .btn-secondary.active { color:rgba(255,255,255,.75); }
+
+/* Set the backgrounds
+// ------------------------- */
+.btn-primary {
+	@include buttonBackground($blue, $blue, $textColor, 0);
+	@include box-shadow(none);
+	border:none;
+	padding:8px 12px;
+}
+
+.btn-secondary {
+	@include buttonBackground($blue, $blue, $textColor, 0);
+	@include box-shadow(none);
+	border:none;
+	padding:8px 12px;
+}
+
+.btn-clear-white {
+	@include transition(all .1s ease-in-out);
+	@include buttonBackground(transparent, transparent, $white, 0);
+	@include box-shadow(none);
+	@include box-sizing(border-box);
+	border:2px solid #FFF;
+	padding:5px 12px;
+	&:hover { border:2px solid rgba(255,255,255,.75); @include box-shadow(none); }
+}
+
+.btn-clear-black {
+	@include transition(all .1s ease-in-out);
+	@include buttonBackground(transparent, transparent, $greyDarker, 0);
+	@include box-shadow(none);
+	@include box-sizing(border-box);
+	border:2px solid #333;
+	padding:5px 12px;
+	&:hover { border:2px solid rgba(51,51,51,.75); @include box-shadow(none); }
+}
+
+.btn-clear-blue {
+	@include transition(all .1s ease-in-out);
+	@include buttonBackground(transparent, transparent, $blueDark, 0);
+	@include box-shadow(none);
+	@include box-sizing(border-box);
+	border:2px solid $blueDark;
+	padding:5px 12px;
+	color:$blueDark !important;
+	&:hover { border:2px solid $blue; color:$blue; @include box-shadow(none); }
+}
+
+
+/* Solid color hover states for "clear" buttons
+// -------------------------------------------------- */
+.btn-clear-black:hover, .btn-clear-white:hover { 
+	&.red { background:$red !important; border:2px solid $red !important; color:$white !important; }
+	&.blue { background:$blue !important; border:2px solid $blue !important; color:$white !important; }
+	&.green { background:$green !important; border:2px solid $green !important; }
+}
+
+
+
+/* Cross-browser Jank
+// -------------------------------------------------- */
+
+button.btn,
+input[type="submit"].btn {
+	*padding-top: 2px;
+	*padding-bottom: 2px;
+}
+button.btn::-moz-focus-inner,
+input[type="submit"].btn::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+button.btn.large,
+input[type="submit"].btn.large {
+	*padding-top: 7px;
+	*padding-bottom: 7px;
+}
+button.btn.small,
+input[type="submit"].btn.small {
+	*padding-top: 3px;
+	*padding-bottom: 3px;
+}
+
+
+/* Button Block
+// -------------------------------------------------- */
+
+.button-block { margin:5px 0; @include clearfix(); }

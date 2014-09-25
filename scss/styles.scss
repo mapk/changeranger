@@ -1,0 +1,133 @@
+/* Main Stylesheet */
+/* =============== */
+@import "_variables";
+@import "_mixins";
+@import "_base";
+@import "../../_susy/susy";
+@import "_buttons";
+
+@include border-box-sizing;
+
+$susy: layout( 12 (4em .7em) after);
+
+
+
+/* Positioning
+================================================== */
+
+/*  Absolute positioning the footer on the bottom */
+html, body { height:100%; }
+
+
+
+/* Site Specific
+================================================== */
+
+header { @include full; background:$yellow; padding:1em; @include clearfix(); }
+.good { background:$green !important; color:$greyDarker !important; }
+.bad { background:$red !important; color:$greyDarker !important; }
+.ugly { background:$yellow !important; color:$greyDarker !important; }
+
+
+section { @include clearfix(); }
+
+ul.left { @include span(6 inside-static); position:relative; list-style:none; margin:0; }
+ul.right { @include span(6 inside-static); position:relative; list-style:none; margin:0; }
+aside.left { @include span(6 inside-static); position:relative; list-style:none; margin:0; min-height:100%; }
+aside.right { @include span(6 inside-static); position:relative; list-style:none; margin:0; min-height:100%; }
+
+
+footer { @include full; padding:1em; position:absolute; bottom:0; color:lighten($blue,10%); font-size:12px; 
+	a, a:hover, a:visited, a:active { color:lighten($blue,20%); }
+}
+
+img.scale-with-grid { max-width:100%; height:auto; }
+
+
+.full-img { text-align:center;
+	background: url(../images/bg-sea-bluesea.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	.logo { width:200px; margin-top:160px; @include transition(all .3s ease-in-out); }
+	h3 { text-align:center; margin:40px 0; color:$blueDark; @include transition(all .3s ease-in-out); }
+}
+
+.stuff { position:relative; z-index:10; }
+.info { background:rgba(255,255,255,0); color:rgba(255,255,255,0); width:500px; padding:160px 1em 1em; margin:0 auto; overflow:hidden; height:0; z-index:1; padding:0; font-weight:400; text-align:justify; text-justify:newspaper;
+	@include transition(all .3s ease-in-out); 
+	p { color:$blueDark; 
+		a, a:visited { color:$black; }
+	}
+}
+span.learn { display:block; }
+span.close { display:none; }
+
+body.open { @include transition(all .3s ease-in-out);
+	.info { color:$blue; height:200px; margin-bottom:50px;  
+		a:hover { text-decoration:underline; }
+	}
+	.logo { width:120px; margin-top:30px; }
+	.stuff h3 { color:rgba(255,255,255,0); margin-top:-40px; }
+	span.learn { display:none; }
+	span.close { display:block; }
+}
+
+
+
+/* Accordion
+================================================== */
+
+.accordion-header { cursor:pointer; 
+	i.icon-Arrow2Right2 { @include transition(all .2s ease); color:$greyDark; }
+}
+i.icon-Arrow2Right2 { @include rotate(0deg); }
+.active-header i.icon-Arrow2Right2 { @include rotate(90deg); }
+.accordion-content { display:none; padding:1em; @include clearfix(); }
+
+
+
+
+/* Media Queries
+================================================== */
+
+@media only screen and (max-height: 820px) {
+	.btn-clear-blue { 
+		@include buttonBackground(transparent, transparent, $white, 0); 
+		border:2px solid $white;
+		color:$white !important;
+		&:hover { color:rgba(255,255,255,.7) !important; border:2px solid rgba(255,255,255,.7); }
+	}
+}
+
+@media only screen and (max-height: 680px) {
+	.full-img {
+		.p-3, .p-3 a, .p-3 a:visited { color:$white; }
+		.logo { margin-top:80px; }
+	}
+	footer { display:none; }
+}
+
+@media only screen and (max-height: 500px) {
+	.full-img {
+		.p-2 { color:$white; }
+	}
+}
+
+@media only screen and (max-height: 500px) {
+	.full-img {
+		.p-3, .p-2, .p-1, .info p a, .info p a:visited { color:$white; }
+	}
+}
+
+@media only screen and (max-width: 615px) {
+	.full-img h3 { margin:30px 0 40px; }
+}
+
+@media only screen and (max-width: 520px) {
+	.info { width:100%; padding:0 1em; }
+	body.open .info { height:auto; }
+}
+
+
