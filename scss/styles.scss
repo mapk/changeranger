@@ -130,4 +130,11 @@ i.icon-Arrow2Right2 { @include rotate(0deg); }
 	body.open .info { height:auto; }
 }
 
+@media only screen and (max-width: 320px) {
+	.full-img {
+		h3, .p-3, .p-2, .p-1, .info p a, .info p a:visited { color:$white; }
+		h3 { margin:40px 0 30px; }
+	}
+}
+
 

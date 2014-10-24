@@ -923,3 +923,8 @@ i.icon-Arrow2Right2 {
 
   body.open .info {
     height: auto; } }
+@media only screen and (max-width: 320px) {
+  .full-img h3, .full-img .p-3, .full-img .p-2, .full-img .p-1, .full-img .info p a, .full-img .info p a:visited {
+    color: #FFFFFF; }
+  .full-img h3 {
+    margin: 40px 0 30px; } }
